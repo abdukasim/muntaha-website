@@ -12,7 +12,7 @@ export default function Navbar() {
     "Contact",
   ];
   return (
-    <nav className="md:mx-28 md:pt-7">
+    <nav className="xl:mx-28 xl:pt-7">
       {isOpen && (
         <div className="md:hidden fixed py-8 flex flex-col items-center justify-between bg-white z-50 h-screen w-screen">
           <Image
@@ -46,9 +46,9 @@ export default function Navbar() {
       <div className="flex  mx-4 items-center justify-between h-20">
         <div className="">
           <button className="" onClick={() => setIsOpen(!isOpen)}>
-            <FaBars className="text-white text-3xl md:hidden" />
+            <FaBars className="text-white text-3xl lg:hidden" />
           </button>
-          <a href="#" className="hidden md:block">
+          <a href="#" className="hidden lg:block">
             <Image
               width={45}
               height={71}
@@ -65,7 +65,7 @@ export default function Navbar() {
           </a>
         </div>
         <div className="flex items-center">
-          <ul className="hidden md:flex text-white items-center font-medium text-base h-full">
+          <ul className="hidden lg:flex text-white items-center font-medium text-base h-full">
             {navLinks.map((link, index) => (
               <li key={index} className="mr-7">
                 <a href={`#${link}`} className="hover:text-purple-500">
@@ -74,7 +74,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <button className="block text-purple-500 bg-white hover:bg-purple-500 hover:text-white rounded-md px-6 py-2 md:px-10 md:py-4 md:ml-3">
+          <button className="block text-purple-500 bg-white hover:bg-purple-500 hover:text-white rounded-md px-2  sm:px-6 py-1 sm:py-2 lg:px-10 lg:py-4 lg:ml-3">
             DONATE NOW
           </button>
         </div>
