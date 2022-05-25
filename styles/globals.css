@@ -30,4 +30,10 @@ a {
   .hero-p-lg {
     width: 744px;
   }
+  .about-p-sm {
+    width: 495px;
+  }
+  .about-bg {
+    background-image: linear-gradient(90deg, #fff 40%, rgba(128, 79, 179, 0.06) 40%)
+  }
 }
