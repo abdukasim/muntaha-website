@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -13,4 +13,21 @@ a {
 
 * {
   box-sizing: border-box;
+} */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+  .hero-pattern {
+    background-image: linear-gradient(110.93deg, rgba(0, 0, 0, 0.59) 19.43%, 
+                        rgba(74, 1, 125, 0.59) 83.61%), 
+                        url(../public/images/heroImage.png);
+  }
+  .hero-p-sm {
+    width: 600px;
+  }
+  .hero-p-lg {
+    width: 744px;
+  }
 }
