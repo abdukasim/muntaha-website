@@ -36,4 +36,7 @@ a {
   .about-bg {
     background-image: linear-gradient(90deg, #fff 40%, rgba(128, 79, 179, 0.06) 40%)
   }
+  .stat-pattern {
+    background: linear-gradient(84.58deg, #65A5E1 0%, #D065E1 99.67%);
+  }
 }

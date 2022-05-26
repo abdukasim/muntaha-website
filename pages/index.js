@@ -3,6 +3,7 @@ import Image from "next/image";
 import AboutSection from "../components/aboutSection";
 import ActivitySection from "../components/activitySection";
 import Header from "../components/header";
+import StatSection from "../components/statSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <AboutSection />
       <ActivitySection />
+      <StatSection />
     </div>
   );
 }
