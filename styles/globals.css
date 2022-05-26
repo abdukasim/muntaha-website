@@ -45,4 +45,25 @@ a {
   .donation-pattern-lg {
     background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0,0,0,.8)), url(../public/images/volunteers.png);
   }
+  .name-input-sm {
+    width: 100px;
+    height: 43px;
+    background: rgba(101, 165, 225, 0.41)
+  }
+  .name-input-lg {
+    width: 273px;
+    height: 81px;
+    background: rgba(101, 165, 225, 0.41);
+  }
+  .email-input-sm {
+    height: 43px;
+    background: rgba(101, 165, 225, 0.41);
+  }
+  .email-input-lg {
+    height: 81px;
+    background: rgba(101, 165, 225, 0.41);
+  }
+  .subscribe-btn {
+    background: linear-gradient(94.76deg, #4A017D 0.59%, #804FB3 63.73%);
+  }
 }
