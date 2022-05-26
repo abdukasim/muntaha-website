@@ -15,9 +15,9 @@ export default function ActivitySection() {
           />
         </div>
         <div className="px-10 py-24 md:pt-72 md:pl-44  md:bg-inherit flex items-start flex-col w-full">
-          <h1 className="font-black text-3xl text-purple-500 uppercase mb-6">
+          <h2 className="font-black text-3xl text-purple-500 uppercase mb-6">
             what we do
-          </h1>
+          </h2>
           <p className="mb-6 pb-3 font-light text-base md:text-2xl md:about-p-sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero
             ipsum quis aliquet semper ultricies. Feugiat justo at fermentum et
