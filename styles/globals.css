@@ -39,4 +39,10 @@ a {
   .stat-pattern {
     background: linear-gradient(84.58deg, #65A5E1 0%, #D065E1 99.67%);
   }
+  .donation-pattern-sm {
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0,0,0,.8)), url(../public/images/volunteer-sm.png) ;
+  }
+  .donation-pattern-lg {
+    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0,0,0,.8)), url(../public/images/volunteers.png);
+  }
 }
