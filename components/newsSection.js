@@ -17,15 +17,15 @@ export default function NewsSection() {
     },
   ];
   return (
-    <section className="news-section flex flex-col px-10 py-24 md:pt-72 md:pl-44">
+    <section className="news-section flex flex-col px-10 py-24 md:pt-84px md:pl-44">
       <div className="">
         <h2 className="font-black text-2xl sm:text-3xl text-purple-500 uppercase mb-14 md:mb-20">
           News and Stories
         </h2>
       </div>
       <div className="flex flex-row  justify-start">
-        {news.map((news) => (
-          <div className="w-max mr-24 flex flex-col">
+        {news.map((news, index) => (
+          <div className="w-max mr-24 flex flex-col" key={index}>
             <Image
               width={340}
               height={266}
