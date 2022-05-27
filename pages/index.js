@@ -4,6 +4,7 @@ import AboutSection from "../components/aboutSection";
 import ActivitySection from "../components/activitySection";
 import CommunitySection from "../components/communitySection";
 import DonationSection from "../components/donationSection";
+import Footer from "../components/footer";
 import Header from "../components/header";
 import NewsSection from "../components/newsSection";
 import StatSection from "../components/statSection";
@@ -24,6 +25,7 @@ export default function Home() {
       <DonationSection />
       <NewsSection />
       <CommunitySection />
+      <Footer />
     </div>
   );
 }
