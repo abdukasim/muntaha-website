@@ -20,6 +20,13 @@ module.exports = {
       },
       spacing: {
         "70px": "70px",
+        "84px": "84px",
+        "90px": "90px",
+        "202px": "202px",
+        "834px": "834px",
+      },
+      fontSize: {
+        tiny: "8px",
       },
     },
   },

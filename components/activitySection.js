@@ -4,7 +4,7 @@ import React from "react";
 export default function ActivitySection() {
   return (
     <section className="activity-section">
-      <div className="flex flex-col md:flex-row-reverse">
+      <div className="flex flex-col lg:flex-row-reverse">
         <div className="w-full mt-28 mb-10 pt-10 px-10  border-t-8 lg:border-t-16 border-l-8 lg:border-l-16 border-t-purple-500 border-l-purple-500">
           <Image
             width={582}
@@ -14,7 +14,7 @@ export default function ActivitySection() {
             alt="Washing hands"
           />
         </div>
-        <div className="px-10 py-24 md:pt-72 md:pl-44  md:bg-inherit flex items-start flex-col w-full">
+        <div className="px-10 py-24 lg:pt-72 md:pl-44  md:bg-inherit flex items-start flex-col w-full">
           <h2 className="font-black text-3xl text-purple-500 uppercase mb-6">
             what we do
           </h2>

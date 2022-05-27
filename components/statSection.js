@@ -8,8 +8,8 @@ export default function StatSection() {
         <h3 className="my-70px px-4 text-white font-normal text-lg sm:text-xl text-center uppercase">
           at muntaha foundation we have provided
         </h3>
-        <div className="flex flex-col md:flex-row">
-          <div className="flex flex-col mb-70px md:ml-32">
+        <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col mb-70px lg:ml-32">
             <div className="mb-9 text-center">
               <Image
                 width={116.67}
@@ -35,7 +35,7 @@ export default function StatSection() {
               For 56 Families
             </span>
           </div>
-          <div className="flex flex-col mb-70px md:mr-32">
+          <div className="flex flex-col mb-70px lg:mr-32">
             <div className="mb-9 text-center">
               <Image
                 width={116.67}
