@@ -4,8 +4,8 @@ import React from "react";
 export default function AboutSection() {
   return (
     <section className="about-section">
-      <div className="flex flex-col lg:flex-row md:mt-0 lg:about-bg">
-        <div className="w-full mt-20 lg:mt-40">
+      <div className="flex flex-col xl:flex-row md:mt-0 xl:about-bg">
+        <div className="w-full mt-20 xl:mt-40">
           <Image
             width={720}
             height={888}

@@ -17,7 +17,7 @@ export default function NewsSection() {
     },
   ];
   return (
-    <section className="news-section flex flex-col px-10 py-24 md:pt-84px md:pl-44">
+    <section className="news-section flex flex-col px-10 py-24 md:pt-84px md:pl-20 xl:pl-44">
       <div className="">
         <h2 className="font-black text-2xl sm:text-3xl text-purple-500 uppercase mb-14 md:mb-20">
           News and Stories

@@ -8,7 +8,7 @@ export default function Header() {
       style={{ height: "90vh" }}
     >
       <Navbar />
-      <div className="flex flex-col mx-4 mt-20 sm:mt-32 md:my-auto items-center justify-center">
+      <div className="flex flex-col mx-4 mt-64 md:my-auto items-center justify-center">
         <h1 className="text-white text-center font-black text-3xl sm:text-5xl md:text-8xl tracking-wider mb-3">
           HUNGER FREE ETHIOPIA
         </h1>
