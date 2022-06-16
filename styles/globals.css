@@ -56,4 +56,10 @@
     height: 81px;
     background: linear-gradient(94.76deg, #4A017D 0.59%, #804FB3 63.73%);
   }
+  .about-hero {
+    background-image: url(../public/images/volunteers.png);
+  }
+  .donate-btn {
+    background: linear-gradient(94.76deg, #4A017D 0.59%, #804FB3 63.73%);
+  }
 }
