@@ -1,13 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
-import AboutSection from "../components/aboutSection";
-import ActivitySection from "../components/activitySection";
-import CommunitySection from "../components/communitySection";
-import DonationSection from "../components/donationSection";
-import Footer from "../components/footer";
-import Header from "../components/header";
+import AboutSection from "../components/HomePage/aboutSection";
+import ActivitySection from "../components/HomePage/activitySection";
+import CommunitySection from "../components/HomePage/communitySection";
+import DonationSection from "../components/HomePage/donationSection";
+import Header from "../components/HomePage/header";
+import TransparentNavbar from "../components/HomePage/TranparentNavbar";
 import NewsSection from "../components/newsSection";
-import StatSection from "../components/statSection";
+import StatSection from "../components/HomePage/statSection";
 
 export default function Home() {
   return (
@@ -18,14 +17,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <header
+        className="md:flex md:flex-col hero-pattern  bg-center lg:bg-no-repeat bg-cover"
+        style={{ height: "90vh" }}
+      >
+        <TransparentNavbar />
+        <Header />
+      </header>
       <AboutSection />
       <ActivitySection />
       <StatSection />
       <DonationSection />
       <NewsSection />
       <CommunitySection />
-      <Footer />
     </div>
   );
 }
