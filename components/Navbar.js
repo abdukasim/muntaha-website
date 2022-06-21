@@ -67,7 +67,7 @@ export default function Navbar() {
       <div className="flex  mx-4 items-center justify-between h-20 lg:mb-7">
         <div className="">
           <button className="" onClick={() => setIsOpen(!isOpen)}>
-            <FaBars className="text-purple-light text-3xl lg:hidden" />
+            <FaBars className="text-purple-dark text-3xl lg:hidden" />
           </button>
           <Link href="/">
             <a className="hidden lg:block">
