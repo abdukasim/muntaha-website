@@ -10,8 +10,8 @@ export default function Vision() {
             width={214.94}
             height={176}
             // layout="responsive"
-            src="/images/missionIcon.png"
-            alt="Children"
+            src="/images/visionIcon.svg"
+            alt="Vision Icon"
           />
         </div>
         <div className="">
@@ -39,12 +39,12 @@ export default function Vision() {
             height={176}
             // layout="responsive"
             src="/images/missionIcon.png"
-            alt="Children"
+            alt="Mission Icon"
           />
         </div>
         <div className="">
           <h2 className="font-black text-3xl lg:text-4xl uppercase text-center lg:text-justify ">
-            our vision
+            our mission
           </h2>
           <p className="font-light text-base lg:text-2xl text-justify mt-6 lg:w-544px">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Libero
