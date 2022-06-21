@@ -3,8 +3,8 @@ import React from "react";
 
 export default function Vision() {
   return (
-    <section className="vision-section py-28 lg:pt-88px lg:pb-120px pl-12 lg:pl-56 pr-8 lg:pr-88px bg-gray-200">
-      <div className="flex flex-col lg:flex-row-reverse lg:items-center mb-24 justify-center lg:justify-between">
+    <section className="vision-section py-28 lg:pt-88px lg:pb-120px pl-12 lg:pl-56 pr-8 lg:pr-44 bg-gray-200">
+      <div className="flex flex-col xl:flex-row-reverse lg:items-center mb-24 justify-center lg:justify-between">
         <div className="self-center mb-16">
           <Image
             width={214.94}
@@ -32,7 +32,7 @@ export default function Vision() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row-reverse lg:items-center mb-24 justify-center lg:justify-between">
+      <div className="flex flex-col xl:flex-row-reverse lg:items-center mb-24 justify-center lg:justify-between">
         <div className="self-center mb-16">
           <Image
             width={214.94}
