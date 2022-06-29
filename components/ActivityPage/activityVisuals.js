@@ -22,7 +22,7 @@ export default function ActivityVisuals() {
   return (
     <section className="activity-visuals flex flex-col lg:flex-row justify-between items-center py-44 px-113px lg:py-24 lg:pl-36 lg:pr-140px bg-gray-200">
       {icons.map((icon, index) => (
-        <div className="flex flex-col mb-24 last:mb-0 lg:mb-0">
+        <div className="flex flex-col mb-24 last:mb-0 lg:mb-0" key={index}>
           <Image
             width={285.31}
             height={254.94}
