@@ -49,7 +49,7 @@ export default function Footer() {
   ];
   return (
     <section className="footer-section flex flex-col justify-center bg-brand-dark">
-      <div className="flex flex-col xl:flex-row xl:justify-between items-center xl:mx-202px">
+      <div className="flex flex-col xl:flex-row xl:justify-between items-center xl:mx-40">
         <div className="mt-12 mb-12 ">
           <Link href="/">
             <a>
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
         <ul className="flex flex-row justify-between xl:justify-center  xl:w-max text-white items-center font-normal text-xs mx-1 sm:mx-6 xl:m-0 mb-12 sm:text-sm h-full">
           {navLinks.map((link, index) => (
-            <li key={index} className="xl:mx-10 lg:mx-4 mx-1">
+            <li key={index} className=" lg:mx-4 mx-1">
               <Link href={link.link}>
                 <a className="hover:text-purple-500">
                   {link.name.toUpperCase()}
@@ -76,7 +76,7 @@ export default function Footer() {
         </ul>
       </div>
       <div
-        className="mx-12 mb-12"
+        className="mx-12 md:mx-40 mb-12"
         style={{ border: "1px solid rgba(247, 244, 250, 0.28)" }}
       ></div>
       <div className="mb-8">
