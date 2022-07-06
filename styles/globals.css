@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities{
+@layer utilities {
   .hero-pattern {
-    background-image: linear-gradient(110.93deg, rgba(0, 0, 0, 0.59) 19.43%, 
-                        rgba(74, 1, 125, 0.59) 83.61%), 
-                        url(../public/images/heroImage.png);
+    background-image: linear-gradient(
+        110.93deg,
+        rgba(0, 0, 0, 0.59) 19.43%,
+        rgba(74, 1, 125, 0.59) 83.61%
+      ),
+      url(../public/images/heroImage.png);
   }
   .hero-p-sm {
     width: 600px;
@@ -18,21 +21,27 @@
     width: 495px;
   }
   .about-bg {
-    background-image: linear-gradient(90deg, #fff 40%, rgba(128, 79, 179, 0.06) 40%)
+    background-image: linear-gradient(
+      90deg,
+      #fff 40%,
+      rgba(128, 79, 179, 0.06) 40%
+    );
   }
   .stat-pattern {
-    background: linear-gradient(84.58deg, #65A5E1 0%, #D065E1 99.67%);
+    background: linear-gradient(84.58deg, #65a5e1 0%, #d065e1 99.67%);
   }
   .donation-pattern-sm {
-    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0,0,0,.8)), url(../public/images/volunteer-sm.png) ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+      url(../public/images/volunteer-sm.png);
   }
   .donation-pattern-lg {
-    background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0,0,0,.8)), url(../public/images/volunteers.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+      url(../public/images/volunteers.png);
   }
   .name-input-sm {
     width: 100px;
     height: 43px;
-    background: rgba(101, 165, 225, 0.41)
+    background: rgba(101, 165, 225, 0.41);
   }
   .name-input-lg {
     width: 273px;
@@ -50,16 +59,24 @@
   }
   .subscribe-btn-sm {
     height: 43px;
-    background: linear-gradient(94.76deg, #4A017D 0.59%, #804FB3 63.73%);
+    background: linear-gradient(94.76deg, #4a017d 0.59%, #804fb3 63.73%);
   }
   .subscribe-btn-lg {
     height: 81px;
-    background: linear-gradient(94.76deg, #4A017D 0.59%, #804FB3 63.73%);
+    background: linear-gradient(94.76deg, #4a017d 0.59%, #804fb3 63.73%);
   }
   .about-hero {
     background-image: url(../public/images/volunteers.png);
   }
   .donate-btn {
-    background: linear-gradient(94.76deg, #4A017D 0.59%, #804FB3 63.73%);
+    background: linear-gradient(94.76deg, #4a017d 0.59%, #804fb3 63.73%);
+  }
+  .contact-background {
+    background-image: url(../public/images/logoWatermark.svg);
+    background-position: center;
+  }
+  .contact-background-lg {
+    background-image: url(../public/images/contactWatermark.svg);
+    background-position: center;
   }
 }
