@@ -65,12 +65,12 @@ export default function Navbar() {
         </div>
       )}
       <div className="flex  mx-4 items-center justify-between h-20 lg:mb-7">
-        <div className="">
+        <div className="flex flex-col">
           <button className="" onClick={() => setIsOpen(!isOpen)}>
             <FaBars className="text-purple-dark text-3xl lg:hidden" />
           </button>
           <Link href="/">
-            <a className="hidden lg:block">
+            <a className="hidden lg:flex lg:items-center">
               <Image
                 width={45}
                 height={71}
