@@ -21,6 +21,8 @@ module.exports = {
         16: "16px",
       },
       spacing: {
+        34: "135px",
+        100: "400px",
         "70px": "70px",
         "78px": "78px",
         "84px": "84px",
@@ -32,7 +34,9 @@ module.exports = {
         "202px": "202px",
         "282px": "282px",
         "544px": "544px",
+        "621px": "621px",
         "834px": "834px",
+        "938px": "938px",
       },
       fontSize: {
         tiny: "8px",
