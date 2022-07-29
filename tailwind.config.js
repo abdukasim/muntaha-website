@@ -41,6 +41,43 @@ module.exports = {
       fontSize: {
         tiny: "8px",
       },
+      keyframes: {
+        "fade-in-scale": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.9)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+        "fade-in-down": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        "fade-in-up": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+      },
+      animation: {
+        "fade-in-scale": "fade-in-scale .5s ease-out",
+        "fade-in-down": "fade-in-down .5s ease-out",
+        "fade-in-up": "fade-in-up .5s ease-out",
+      },
     },
   },
   plugins: [],
