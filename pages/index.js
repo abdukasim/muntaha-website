@@ -7,6 +7,7 @@ import Header from "../components/HomePage/header";
 import TransparentNavbar from "../components/HomePage/TranparentNavbar";
 import NewsSection from "../components/newsSection";
 import StatSection from "../components/HomePage/statSection";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
         className="md:flex md:flex-col hero-pattern  bg-center lg:bg-no-repeat bg-cover"
         style={{ height: "90vh" }}
       >
-        <TransparentNavbar />
+        <Navbar transparent />
         <Header />
       </header>
       <AboutSection />
