@@ -4,7 +4,6 @@ import ActivitySection from "../components/HomePage/activitySection";
 import CommunitySection from "../components/HomePage/communitySection";
 import DonationSection from "../components/HomePage/donationSection";
 import Header from "../components/HomePage/header";
-import TransparentNavbar from "../components/HomePage/TranparentNavbar";
 import NewsSection from "../components/newsSection";
 import StatSection from "../components/HomePage/statSection";
 import Navbar from "../components/Navbar";

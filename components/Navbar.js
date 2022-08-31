@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { FaBars } from "react-icons/fa";
 
-export default function Navbar() {
+export default function Navbar({ transparent }) {
   const [isOpen, setIsOpen] = React.useState(false);
   const navLinks = [
     {
@@ -67,7 +67,11 @@ export default function Navbar() {
       <div className="flex  mx-4 items-center justify-between h-20 lg:mb-7">
         <div className="flex flex-col">
           <button className="" onClick={() => setIsOpen(!isOpen)}>
-            <FaBars className="text-purple-dark text-3xl lg:hidden" />
+            <FaBars
+              className={`${
+                transparent ? "text-white" : "text-purple-dark"
+              } text-3xl lg:hidden`}
+            />
           </button>
           <Link href="/">
             <a className="hidden lg:flex lg:items-center">
@@ -75,20 +79,28 @@ export default function Navbar() {
                 width={45}
                 height={71}
                 color="black"
-                src="/images/Asset2.png"
+                src={`${
+                  transparent ? "/images/white1.svg" : "/images/Asset2.png"
+                }`}
                 alt="Muntaha Foundation"
               />
               <Image
                 width={128}
                 height={71}
-                src="/images/Asset1.png"
+                src={`${
+                  transparent ? "/images/white.svg" : "/images/Asset1.png"
+                }`}
                 alt="Muntaha Foundation"
               />
             </a>
           </Link>
         </div>
         <div className="flex items-center">
-          <ul className="hidden lg:flex text-black items-center font-normal text-base h-full">
+          <ul
+            className={`${
+              transparent ? "text-white" : "text-black"
+            } hidden lg:flex items-center font-normal text-base h-full`}
+          >
             {navLinks.map((link, index) => (
               <li key={index} className="mr-7">
                 <Link href={link.link}>
@@ -99,7 +111,13 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <button className="block text-white donate-btn rounded-md px-2  sm:px-6 py-1 sm:py-2 lg:px-10 lg:py-4 lg:ml-3">
+          <button
+            className={`${
+              transparent
+                ? " text-purple-500 bg-white hover:bg-purple-500 hover:text-white"
+                : "text-white donate-btn"
+            } block  rounded-md px-2  sm:px-6 py-1 sm:py-2 lg:px-10 lg:py-4 lg:ml-3`}
+          >
             DONATE NOW
           </button>
         </div>
