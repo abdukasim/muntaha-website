@@ -1,12 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+import { fadeInVariant } from "../../libs/animations";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function AboutSection() {
+  const control = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.7 });
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
   return (
     <section className="about-section">
       <div className="flex flex-col xl:flex-row md:mt-0 xl:about-bg">
-        <div className="w-full mt-20 xl:mt-40">
+        <motion.div
+          ref={ref}
+          variants={fadeInVariant}
+          initial="hidden"
+          animate={control}
+          className="w-full mt-20 xl:mt-40"
+        >
           <Image
             width={720}
             height={888}
@@ -15,7 +31,7 @@ export default function AboutSection() {
             src="/images/aboutImageLg.png"
             alt="Children"
           />
-        </div>
+        </motion.div>
         <div className="px-10 py-24 md:pt-72 md:pl-20 bg-gray-200 md:bg-inherit flex items-start flex-col w-full">
           <h2 className="font-black text-3xl text-purple-500 uppercase mb-6">
             Who we are
