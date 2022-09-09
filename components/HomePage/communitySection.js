@@ -9,15 +9,15 @@ export default function CommunitySection() {
         </h2>
       </div>
       <div className="flex flex-col xl:flex-row">
-        <div className="flex flex-row  justify-start w-full">
+        <div className="flex flex-col sm:flex-row  justify-start sm:w-full">
           <input
             type="text"
-            className="name-input-sm xl:name-input-lg basis-1/4 mr-2   placeholder:text-brand-light placeholder:text-xs placeholder:xl:text-2xl placeholder:md:text-lg placeholder:font-normal placeholder:text-center"
+            className="community-input-bg sm:name-input-sm xl:name-input-lg sm:basis-1/4 mb-2 sm:mr-2  placeholder:text-brand-light placeholder:text-xs placeholder:xl:text-2xl placeholder:md:text-lg placeholder:font-normal pl-4"
             placeholder="FULL NAME"
           />
           <input
             type="text"
-            className="email-input-sm xl:email-input-lg basis-1/2 grow  placeholder:text-brand-light placeholder:text-xs placeholder:xl:text-2xl placeholder:md:text-lg placeholder:font-normal pl-4"
+            className="community-input-bg sm:email-input-sm xl:email-input-lg sm:basis-1/2 grow  placeholder:text-brand-light placeholder:text-xs placeholder:xl:text-2xl placeholder:md:text-lg placeholder:font-normal pl-4"
             placeholder="EMAIL ADDRESS"
           />
         </div>

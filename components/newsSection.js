@@ -23,7 +23,7 @@ export default function NewsSection() {
           News and Stories
         </h2>
       </div>
-      <div className="flex flex-row  justify-start">
+      <div className="flex flex-row  justify-start overflow-x-auto">
         {news.map((news, index) => (
           <div className="w-max mr-24 flex flex-col" key={index}>
             <Image

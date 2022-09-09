@@ -26,13 +26,13 @@ export default function DonationSection() {
               monthly
             </button>
           </div>
-          <div className="flex flex-col mx-10 mb-16 ">
+          <div className="flex flex-col mx-10 mb-16">
             <div className="bg-gray-200 rounded-tr-md rounded-tl-md py-5 md:px-18">
               <p className="font-medium text-base sm:text-xl md:text-2xl text-center">
                 Choose an amount to give per month
               </p>
             </div>
-            <div className=" bg-white rounded-br-md rounded-bl-md grid grid-cols-3 gap-4 p-5 md:p-8">
+            <div className="bg-white rounded-br-md rounded-bl-md grid grid-cols-3 gap-4 p-5 md:p-8">
               {donationAmounts.map((amount) => (
                 <DonationButton text={amount} key={amount} />
               ))}
