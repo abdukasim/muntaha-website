@@ -12,8 +12,12 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Muntaha Foundation</title>
+        <title>Muntaha Foundation - A hunger free Ethiopia</title>
         <meta name="description" content="A hunger free Ethiopia" />
+        <meta
+          name="keywords"
+          content="non-profit, charity, feeding children, feeding mothers"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

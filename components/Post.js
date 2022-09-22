@@ -13,22 +13,24 @@ export function FirstPost({ post, featuredMedia }) {
         <h2 className="font-semibold text-3xl ml-8 mr-7 mb-7">
           {post.title.rendered}
         </h2>
-        <div className="mb-3">
-          <Link href={`/posts/${post.slug}`}>
-            <a>
-              <Image
-                src={featuredMedia.source_url}
-                layout="responsive"
-                width="462"
-                height="303"
-                alt={featuredMedia["alt_text"]}
-              />
-            </a>
-          </Link>
-        </div>
+        {featuredMedia && (
+          <div className="mb-3">
+            <Link href={`/posts/${post.slug}`}>
+              <a>
+                <Image
+                  src={featuredMedia.source_url}
+                  layout="responsive"
+                  width="462"
+                  height="303"
+                  alt={featuredMedia["alt_text"]}
+                />
+              </a>
+            </Link>
+          </div>
+        )}
         <div className="ml-9 mb-6">
           <small className="uppercase font-bold text-base">
-            {post["_embedded"]["wp:term"][1][0].name}.{" "}
+            {post["_embedded"]["wp:term"][0][0]?.name}.{" "}
           </small>
           <small className="uppercase font-light text-base">
             {getDate(post.modified)}
@@ -40,18 +42,18 @@ export function FirstPost({ post, featuredMedia }) {
         ></div>
         <div className="flex flex-row ml-9">
           <Image
-            src={post["_embedded"]["author"][0].avatar_urls["24"]}
+            src={post?.acf?.author_image.url}
             width={48}
             height={48}
-            alt={featuredMedia["alt_text"]}
+            alt={post["_embedded"]["author"][0].slug}
             className="rounded-full"
           />
           <div className="flex flex-col ml-4">
             <small className="font-semibold text-base">
-              {post["_embedded"]["author"][0].name}
+              {post.acf.author_name}
             </small>
             <small className="font-normal text-base blog-text">
-              {post["_embedded"]["author"][0].acf.job_title}
+              {post?.acf?.job_title}
             </small>
           </div>
         </div>
@@ -59,22 +61,24 @@ export function FirstPost({ post, featuredMedia }) {
 
       <div className="hidden md:flex md:flex-row md:mt-16 md:ml-12">
         <div className="flex-initial w-2/3 rounded h-full">
-          <Link href={`/posts/${post.slug}`}>
-            <a>
-              <Image
-                src={featuredMedia.source_url}
-                layout="responsive"
-                width="888"
-                height="427"
-                alt={featuredMedia["alt_text"]}
-              />
-            </a>
-          </Link>
+          {featuredMedia && (
+            <Link href={`/posts/${post.slug}`}>
+              <a>
+                <Image
+                  src={featuredMedia.source_url}
+                  layout="responsive"
+                  width="888"
+                  height="427"
+                  alt={featuredMedia["alt_text"]}
+                />
+              </a>
+            </Link>
+          )}
         </div>
         <div className="flex-initial w-1/3">
           <div className="ml-9 mb-6">
             <small className="uppercase font-bold text-base">
-              {post["_embedded"]["wp:term"][1][0].name}.{" "}
+              {post["_embedded"]["wp:term"][0][0]?.name}.{" "}
             </small>
             <small className="uppercase font-light text-base">
               {getDate(post.modified)}
@@ -89,18 +93,18 @@ export function FirstPost({ post, featuredMedia }) {
           ></div>
           <div className="flex flex-row ml-9">
             <Image
-              src={post["_embedded"]["author"][0].avatar_urls["24"]}
+              src={post?.acf?.author_image.url}
               width={48}
               height={48}
-              alt={featuredMedia["alt_text"]}
+              alt={post["_embedded"]["author"][0].slug}
               className="rounded-full"
             />
             <div className="flex flex-col ml-4">
               <small className="font-semibold text-base">
-                {post["_embedded"]["author"][0].name}
+                {post.acf.author_name}
               </small>
               <small className="font-normal text-base blog-text">
-                {post["_embedded"]["author"][0].acf.job_title}
+                {post?.acf.job_title}
               </small>
             </div>
           </div>
@@ -117,21 +121,23 @@ export function OtherPosts({ posts }) {
         {posts.map((post, index) => (
           <div key={index}>
             <div className="">
-              <Link href={`/posts/${post.slug}`}>
-                <a>
-                  <Image
-                    src={post["_embedded"]["wp:featuredmedia"][0].source_url}
-                    layout="responsive"
-                    width="462"
-                    height="303"
-                    alt={post["_embedded"]["wp:featuredmedia"][0]["alt_text"]}
-                  />
-                </a>
-              </Link>
+              {
+                <Link href={`/posts/${post.slug}`}>
+                  <a>
+                    <Image
+                      src={post["_embedded"]["wp:featuredmedia"][0].source_url}
+                      layout="responsive"
+                      width="462"
+                      height="303"
+                      alt={post["_embedded"]["wp:featuredmedia"][0]["alt_text"]}
+                    />
+                  </a>
+                </Link>
+              }
             </div>
             <div className="mb-6">
               <small className="uppercase font-bold text-base">
-                {post["_embedded"]["wp:term"][1][0].name}.{" "}
+                {post["_embedded"]["wp:term"][0][0]?.name}.{" "}
               </small>
               <small className="uppercase font-light text-base">
                 {getDate(post.modified)}
@@ -150,14 +156,3 @@ export function OtherPosts({ posts }) {
     </section>
   );
 }
-
-//   return (
-//     <>
-//       {postIndex === 0 ? (
-//         firstPost()
-//       ) : (
-//         <div className="flex flex-row">{otherPosts()}</div>
-//       )}
-//     </>
-//   );
-// }
