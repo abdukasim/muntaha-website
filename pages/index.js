@@ -10,7 +10,7 @@ import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
-    <div>
+    <div className="scroll-smooth">
       <Head>
         <title>Muntaha Foundation - A hunger free Ethiopia</title>
         <meta name="description" content="A hunger free Ethiopia" />

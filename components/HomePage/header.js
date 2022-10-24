@@ -21,7 +21,7 @@ export default function Header() {
         tincidunt.
       </p>
       <a
-        href=""
+        href="#donate"
         className="text-white font-bold text-xl md:text-3xl bg-transparent border border-solid border-white rounded-md drop-shadow-lg py-2 sm:py-4 md:py-6 px-10 sm:px-12 md:px-14 hover:bg-white hover:text-purple-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 "
       >
         DONATE NOW

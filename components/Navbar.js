@@ -111,7 +111,8 @@ export default function Navbar({ transparent }) {
               </li>
             ))}
           </ul>
-          <button
+          <a
+            href="#donate"
             className={`${
               transparent
                 ? " text-purple-500 bg-white hover:bg-purple-500 hover:text-white"
@@ -119,7 +120,7 @@ export default function Navbar({ transparent }) {
             } block  rounded-md px-2  sm:px-6 py-1 sm:py-2 lg:px-10 lg:py-4 lg:ml-3`}
           >
             DONATE NOW
-          </button>
+          </a>
         </div>
       </div>
     </nav>
