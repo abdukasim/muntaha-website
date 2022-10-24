@@ -2,7 +2,6 @@ const BASE_URL = "http://mywordpress.muntahafoundation.org/wp-json/wp/v2";
 
 export async function getPosts() {
   const postsRes = await fetch(BASE_URL + "/posts?_embed&acf_format=standard");
-  console.log("POSTRES", postsRes);
   const posts = await postsRes.json();
   return posts;
 }

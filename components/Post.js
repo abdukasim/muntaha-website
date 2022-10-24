@@ -4,6 +4,7 @@ import Image from "next/image";
 //for more info, check out these docs https://nextjs.org/docs/basic-features/image-optimization
 
 import { getDate } from "../utils/utils";
+import { useEffect } from "react";
 
 // export default function Post({ post, featuredMedia, postIndex }) {
 export function FirstPost({ post, featuredMedia }) {
@@ -42,7 +43,7 @@ export function FirstPost({ post, featuredMedia }) {
         ></div>
         <div className="flex flex-row ml-9">
           <Image
-            src={post?.acf?.author_image.url}
+            src={post?.acf?.author_image}
             width={48}
             height={48}
             alt={post["_embedded"]["author"][0].slug}
@@ -93,7 +94,7 @@ export function FirstPost({ post, featuredMedia }) {
           ></div>
           <div className="flex flex-row ml-9">
             <Image
-              src={post?.acf?.author_image.url}
+              src={post?.acf?.author_image}
               width={48}
               height={48}
               alt={post["_embedded"]["author"][0].slug}

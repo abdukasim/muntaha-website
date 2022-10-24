@@ -45,7 +45,7 @@ export default function PostPage({ post }) {
         </div>
         <div className="flex flex-row">
           <Image
-            src={post?.acf?.author_image?.url}
+            src={post?.acf?.author_image}
             width={48}
             height={48}
             alt="author avatar"
@@ -90,11 +90,3 @@ export async function getStaticProps({ params }) {
     revalidate: 10, // In seconds
   };
 }
-
-// import React from "react";
-
-// function PostSlug() {
-//   return <div>PostSlug</div>;
-// }
-
-// export default PostSlug;

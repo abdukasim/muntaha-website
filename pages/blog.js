@@ -8,7 +8,6 @@ import CommunitySection from "../components/HomePage/communitySection";
 
 export default function Blog({ posts }) {
   const firstPost = posts[0];
-  console.log(firstPost);
   const otherPosts = posts.slice(1);
 
   return (
