@@ -6,7 +6,7 @@ export default function handler(req, res) {
     if (req.method === "POST") {
       var options = {
         method: "POST",
-        url: process.env.CHAPA_PAYMENT_URL,
+        url: process.env.CHAPA_ENDPOINT,
         headers: {
           Authorization: `Bearer ${process.env.CHAPA_TEST_API_KEY}`,
         },
