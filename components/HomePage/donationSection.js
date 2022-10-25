@@ -23,6 +23,10 @@ export default function DonationSection() {
       .catch((err) => console.log(err));
   };
 
+  const handleChange = (event) => {
+    setAmount(Number(event.target.value));
+  };
+
   return (
     <section
       className="donation-section donation-pattern-sm md:donation-pattern-lg bg-no-repeat bg-cover"
@@ -87,6 +91,9 @@ export default function DonationSection() {
               <input
                 className="py-4 md:py-7 sm:px-7 md:px-8 bg-gray-200 rounded-md col-span-2 placeholder:text-center placeholder:text-xs placeholder:sm:text-base placeholder:text-black"
                 placeholder="Other Amount"
+                type="text"
+                name="message"
+                onChange={handleChange}
               />
               <small className="w-max text-red-500">{message && message}</small>
               <button
