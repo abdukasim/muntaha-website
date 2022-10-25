@@ -8,7 +8,7 @@ export default function handler(req, res) {
         method: "POST",
         url: process.env.CHAPA_ENDPOINT,
         headers: {
-          Authorization: `Bearer ${process.env.CHAPA_TEST_API_KEY}`,
+          Authorization: `Bearer ${process.env.CHAPA_LIVE_API_KEY}`,
         },
         formData: {
           amount: req.body.amount,
