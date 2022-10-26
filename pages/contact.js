@@ -1,8 +1,49 @@
+import axios from "axios";
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 
 export default function Contact() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const data = {
+      firstName,
+      lastName,
+      email,
+      message,
+    };
+
+    //   // console.log(data);
+    //   axios
+    //     .post("/api/contactApi", data)
+    //     .then((res) => console.log(res))
+    //     .catch((err) => console.error(err));
+    // };
+    fetch("/api/contactApi", {
+      method: "post",
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        console.log("Response recieved");
+        if (res.status === 200) {
+          console.log("Response succeeded!");
+          setSubmitted(true);
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setMessage("");
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
     <>
       <Head>
@@ -32,7 +73,7 @@ export default function Contact() {
             Address - Tero. Traffic Sefer
           </small>
         </div>
-        <form action="" className="mb-36 lg:mt-20">
+        <form onSubmit={handleSubmit} className="mb-36 lg:mt-20">
           <div className="grid grid-cols-2 gap-x-3 gap-y-2 ml-9 mr-7">
             <div className="flex flex-col">
               <label
@@ -44,7 +85,10 @@ export default function Contact() {
               <input
                 type="text"
                 id="firstName"
+                name="firstName"
+                value={firstName}
                 className=" h-16 rounded bg-[#E4DEEB]"
+                onChange={(event) => setFirstName(event.target.value)}
               />
             </div>
             <div className="flex flex-col">
@@ -57,7 +101,10 @@ export default function Contact() {
               <input
                 type="text"
                 id="lastName"
+                name="lastName"
+                value={lastName}
                 className=" h-16 rounded bg-[#E4DEEB]"
+                onChange={(event) => setLastName(event.target.value)}
               />
             </div>
             <div className="flex flex-col col-span-2">
@@ -71,7 +118,9 @@ export default function Contact() {
                 type="email"
                 name="email"
                 id="email"
+                value={email}
                 className=" h-16 rounded bg-[#E4DEEB]"
+                onChange={(event) => setEmail(event.target.value)}
               />
             </div>
             <div className="flex flex-col col-span-2">
@@ -84,15 +133,22 @@ export default function Contact() {
               <textarea
                 name="message"
                 id="message"
+                value={message}
                 cols="30"
                 rows="10"
                 className=" h-36 rounded bg-[#E4DEEB] mb-9"
+                onChange={(event) => setMessage(event.target.value)}
               ></textarea>
             </div>
             <button type="submit" className="bg-purple-500 rounded">
               <p className="font-bold text-xl text-white mx-4 my-5">Submit</p>
             </button>
           </div>
+          {submitted && (
+            <small className="text-green-500 ml-10">
+              Message Sent Successfully
+            </small>
+          )}
         </form>
       </section>
     </>
