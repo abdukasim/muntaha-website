@@ -13,6 +13,8 @@ module.exports = {
         "brand-gray": "#F7F4FA",
         "brand-light": "#FFFAFA",
         "brand-dark": "#191A1C",
+        "brand-blue": "#0B77C2",
+        "brand-yellow": "#FFF38D",
       },
       borderWidth: {
         16: "16px",
