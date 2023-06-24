@@ -40,56 +40,58 @@ export default function Footer() {
     },
   ];
   return (
-    <section className="footer-section flex flex-col justify-center bg-brand-blue py-12">
-      <div className="mx-auto">
-        <ul className="flex flex-col space-y-3 justify-between xl:justify-center  xl:w-max text-white  font-normal text-xs sm:mx-6 xl:m-0 mb-8 sm:text-sm h-full">
-          {navLinks.map((link, index) => (
-            <li key={index} className="">
-              <Link href={link.link}>
-                <a className="hover:text-purple-500">
-                  {link.name.toUpperCase()}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <p className="text-xs text-brand-yellow mb-6 w-64">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod in ab
-          velit voluptatum saepe, minima ut optio? Quibusdam, quo dolore!
-        </p>
-        <div className="mb-12">
-          <Link href="/">
-            <a>
-              <Image
-                width={165}
-                height={75}
-                // layout="responsive"
-                src="/images/footer-logo.svg"
-                alt="Muntaha Foundation"
-              />
-            </a>
-          </Link>
-        </div>
-        <div className="mb-2">
-          <ul className="flex flex-row justify-center items-center space-x-2">
-            {iconLinks.map((iconLink, index) => (
+    <section className="footer-section flex flex-col justify-center bg-brand-blue py-8">
+      <div className="mx-auto md:mx-0">
+        <div className="md:flex  md:items-center md:justify-between mx-20 lg:my-20">
+          <ul className="flex flex-col space-y-3 lg:space-y-8 justify-between xl:justify-center  xl:w-max text-white  font-normal text-xs lg:text-xl xl:m-0 mb-8 sm:text-sm h-full">
+            {navLinks.map((link, index) => (
               <li key={index} className="">
-                <a href={iconLink.link}>
-                  <Image
-                    width={21}
-                    height={21}
-                    // layout="responsive"
-                    src={iconLink.icon}
-                    alt={iconLink.name}
-                  />
-                </a>
+                <Link href={link.link}>
+                  <a className="hover:text-purple-500">
+                    {link.name.toUpperCase()}
+                  </a>
+                </Link>
               </li>
             ))}
           </ul>
+          <p className="order-last text-xs lg:text-base text-brand-yellow mb-6 w-64 lg:w-[400px]">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod in ab
+            velit voluptatum saepe, minima ut optio? Quibusdam, quo dolore!
+          </p>
+          <div className="order-first mb-12 md:mb-0 w-40 lg:w-[332px]">
+            <Link href="/" className="">
+              <Image
+                width={165}
+                height={75}
+                layout="responsive"
+                src="/images/footer-logo.svg"
+                alt="Muntaha Foundation"
+              />
+            </Link>
+          </div>
         </div>
-        <p className=" text-white text-xs">
-          Muntaha Foundation. All Rights Reserved
-        </p>
+        <div>
+          <div className="mb-2">
+            <ul className="flex flex-row justify-center items-center space-x-2 lg:space-x-5">
+              {iconLinks.map((iconLink, index) => (
+                <li key={index} className="w-5 lg:w-10">
+                  <a href={iconLink.link}>
+                    <Image
+                      width={21}
+                      height={21}
+                      layout="responsive"
+                      src={iconLink.icon}
+                      alt={iconLink.name}
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className="text-center text-white text-xs lg:text-base">
+            Muntaha Foundation. All Rights Reserved
+          </p>
+        </div>
       </div>
     </section>
   );
