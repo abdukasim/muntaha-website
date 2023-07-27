@@ -16,7 +16,7 @@ export default function Activity() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
+      <Navbar transparent />
       <Hero />
       <Activities />
       <ActivityVisuals />

@@ -1,17 +1,22 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaBars } from "react-icons/fa";
+import Logo from "./Navbar/logo";
+import LogoSmall from "./Navbar/logo-small";
 
 export default function Navbar({ transparent }) {
+  const drawnNav = React.useRef(null)
+  const navbar = React.useRef(null)
   const [isOpen, setIsOpen] = React.useState(false);
+  const [smallScreen, setSmallScreen] = React.useState(true)
+
   const navLinks = [
     {
-      name: "Who we are",
+      name: "About",
       link: "/about",
     },
     {
-      name: "What we do",
+      name: "Works",
       link: "/activity",
     },
     {
@@ -19,7 +24,7 @@ export default function Navbar({ transparent }) {
       link: "/blog",
     },
     {
-      name: "Get involved",
+      name: "Commuity",
       link: "/get-involved",
     },
     {
@@ -27,102 +32,91 @@ export default function Navbar({ transparent }) {
       link: "/contact",
     },
   ];
+
+  const toggleNav = () => {
+    drawnNav.current.style.top = drawnNav.current.style.top === "0%" ? "-100%" : "0%"
+  }
+
+  const handleScreenSize = () => {
+    if (window.innerWidth <= 768) {
+      setSmallScreen(true)
+    } else {
+      setSmallScreen(false)
+    }
+
+    drawnNav.current.style.top = "-100%"
+    navbar.current.style.position = transparent ? "absolute" : "relative"
+    navbar.current.style.backgroundColor = transparent ? "transparent" : "white"
+  }
+
+  React.useEffect(() => {
+    handleScreenSize()
+
+    window.onresize = handleScreenSize
+  }, [])
+
   return (
-    <nav className="xl:mx-28 xl:pt-7">
-      {isOpen && (
-        <div className="md:hidden fixed py-8 flex flex-col items-center justify-between bg-white z-50 h-screen w-screen">
-          <Link href="/">
-            <a>
-              <Image
-                width={45}
-                height={71}
-                color="black"
-                src="/images/Asset2.png"
-                alt="Muntaha Foundation"
-              />
-            </a>
-          </Link>
-          <ul className="flex flex-col text-black justify-between items-center font-normal text-2xl">
-            {navLinks.map((link, index) => (
-              <li key={index} className="mb-7">
-                <Link href={link.link}>
-                  <a
-                    className="hover:text-purple-500"
-                    onClick={() => setIsOpen(!isOpen)}
-                  >
-                    {link.name.toUpperCase()}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Image
-            width={128}
-            height={71}
-            src="/images/Asset1.png"
-            alt="Muntaha Foundation"
-          />
-        </div>
-      )}
-      <div className="flex  mx-4 items-center justify-between h-20 lg:mb-7">
-        <div className="flex flex-col">
-          <button className="" onClick={() => setIsOpen(!isOpen)}>
-            <FaBars
-              className={`${
-                transparent ? "text-white" : "text-purple-dark"
-              } text-3xl lg:hidden`}
-            />
-          </button>
-          <Link href="/">
-            <a className="hidden lg:flex lg:items-center">
-              <Image
-                width={45}
-                height={71}
-                color="black"
-                src={`${
-                  transparent ? "/images/white1.svg" : "/images/Asset2.png"
-                }`}
-                alt="Muntaha Foundation"
-              />
-              <Image
-                width={128}
-                height={71}
-                src={`${
-                  transparent ? "/images/white.svg" : "/images/Asset1.png"
-                }`}
-                alt="Muntaha Foundation"
-              />
-            </a>
-          </Link>
-        </div>
-        <div className="flex items-center">
-          <ul
-            className={`${
-              transparent ? "text-white" : "text-black"
-            } hidden lg:flex items-center font-normal text-base h-full`}
-          >
-            {navLinks.map((link, index) => (
-              <li key={index} className="mr-7">
-                <Link href={link.link}>
-                  <a className="hover:text-purple-500">
-                    {link.name.toUpperCase()}
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <a
-            href="#donate"
-            className={`${
-              transparent
-                ? " text-purple-500 bg-white hover:bg-purple-500 hover:text-white"
-                : "text-white donate-btn"
-            } block  rounded-md px-2  sm:px-6 py-1 sm:py-2 lg:px-10 lg:py-4 lg:ml-3`}
-          >
-            DONATE NOW
-          </a>
+    <nav className="w-full top-0 left-0 z-10
+      flex items-center justify-between p-8
+      md:p-10 md:px-20
+    " ref={navbar}>
+
+      {/* SMALL SCREEN NAV */}
+      <div className="fixed top-0 left-0 w-full h-full flex md:hidden flex-col items-center text-sm bg-black/75 transition-all" ref={drawnNav}>
+        <div className="flex flex-col items-center py-8 w-full bg-gray-300">
+          <div className="flex items-center">
+            <FaBars onClick={toggleNav} className="text-brand-blue text-2xl mr-4" />
+            <Link href="/">
+              <button>
+                {smallScreen
+                  ? <LogoSmall color={transparent ? "#0B77C2" : "#0B77C2"} textColor={transparent ? "#0B77C2" : "#0B77C2"} />
+                  : <Logo color={transparent ? "#0B77C2" : "#0B77C2"} textColor={transparent ? "#0B77C2" : "#0B77C2"} />}
+              </button>
+            </Link>
+          </div>
+          <div className="flex flex-col my-2 mt-8">
+            {navLinks.map((link, index) => <Link href={link.link} key={index}>
+              <button className="text-brand-blue m-2 my-4">{link.name}</button>
+            </Link>)}
+          </div>
         </div>
       </div>
+      {/* SMALL SCREEN NAV END */}
+
+
+      {/* LEFT SIDE HEADER */}
+      <div className="left flex items-center">
+        {transparent
+          ? <FaBars onClick={toggleNav} className="text-white text-3xl flex md:hidden" />
+          : <FaBars onClick={toggleNav} className="text-brand-blue text-3xl flex md:hidden" />}
+
+        <div className="logo flex items-center mx-4">
+          <Link href="/">
+            <button>
+              {smallScreen
+                ? <LogoSmall color={transparent ? "#fff38d" : "#0B77C2"} textColor={transparent ? "#fff" : "#0B77C2"} />
+                : <Logo color={transparent ? "#fff38d" : "#0B77C2"} textColor={transparent ? "#fff" : "#0B77C2"} />}
+            </button>
+          </Link>
+        </div>
+      </div>
+      {/* LEFT SIDE HEADER END */}
+
+
+      {/* RIGHT SIDE HEADER */}
+      <div className="flex items-center">
+        <div className="hidden md:flex items-center mx-4">
+          {navLinks.map((link, index) => <Link href={link.link} key={index}>
+            {transparent
+              ? <button className="text-white text-base font-light mx-6">{link.name}</button>
+              : <button className="text-brand-blue text-base font-light mx-6">{link.name}</button>}
+          </Link>)}
+        </div>
+
+        <button className="text-brand-blue bg-brand-yellow rounded-full text-xs p-2 px-6 md:text-base md:p-2 md:px-8">Donate Now</button>
+      </div>
+      {/* RIGHT SIDE HEADER END */}
+
     </nav>
   );
 }

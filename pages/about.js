@@ -16,7 +16,7 @@ export default function About() {
         <meta name="description" content="About Us" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      <Navbar transparent />
       <Hero />
       <AboutUs />
       <Vision />
