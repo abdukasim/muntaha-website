@@ -17,26 +17,33 @@ export default function NewsSection() {
     },
   ];
   return (
-    <section className="news-section flex flex-col px-10 py-24 md:pt-84px md:pl-20 xl:pl-44">
-      <div className="">
-        <h2 className="font-black text-2xl sm:text-3xl text-purple-500 uppercase mb-14 md:mb-20">
-          News and Stories
-        </h2>
-      </div>
-      <div className="flex flex-row  justify-start overflow-x-auto">
-        {news.map((news, index) => (
-          <div className="w-max mr-24 flex flex-col" key={index}>
-            <Image
-              width={340}
-              height={266}
-              layout="responsive"
-              src={news.image}
-              alt="Washing hands"
-            />
-            <h3 className="font-bold text-xl text-purple-500 mt-6">
-              {news.title}
-            </h3>
-            <p className="text-base text-purple-500">{news.description}</p>
+    <section className="ml-8 mb-9 lg:ml-28">
+      <h3 className="mb-9 text-2xl font-normal text-brand-blue lg:mb-16 lg:text-5xl">
+        News and Stories
+      </h3>
+      <div className="no-scrollbar flex h-[280px] gap-7 overflow-x-scroll lg:h-[450px]">
+        {news.map((item, index) => (
+          <div key={index} className="w-60 lg:w-[400px]">
+            <div className="w-60 lg:w-[400px]">
+              <Image
+                width={243}
+                height={128}
+                layout="responsive"
+                src={item.image}
+                alt={item.title}
+              />
+            </div>
+            <div className="flex h-32 min-w-full flex-col items-start justify-center pl-5 shadow-xl lg:h-44 lg:pl-8">
+              <h4 className="text-sm font-bold text-brand-blue lg:text-3xl">
+                {item.title}
+              </h4>
+              <p className="mb-2 text-xs font-normal text-brand-blue lg:text-sm">
+                {item.description}
+              </p>
+              <button className="w-max rounded-full bg-brand-yellow px-5 py-2 text-[7px] text-brand-blue lg:text-base">
+                Learn More
+              </button>
+            </div>
           </div>
         ))}
       </div>
