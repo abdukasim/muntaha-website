@@ -40,25 +40,23 @@ export default function Footer() {
     },
   ];
   return (
-    <section className="footer-section flex flex-col justify-center bg-brand-blue py-8">
+    <section className="footer-section flex flex-col justify-center bg-brand-blue pb-8">
       <div className="mx-auto md:mx-0">
-        <div className="md:flex  md:items-center md:justify-between mx-20 lg:my-20">
-          <ul className="flex flex-col space-y-3 lg:space-y-8 justify-between xl:justify-center  xl:w-max text-white  font-normal text-xs lg:text-xl xl:m-0 mb-8 sm:text-sm h-full">
+        <div className="mx-12 my-10  md:flex md:items-center md:justify-between lg:mx-20">
+          <ul className="mb-8 flex h-full flex-col space-y-2 text-xs  font-normal text-white  sm:text-sm md:mb-0 lg:text-lg xl:m-0 xl:w-max xl:justify-center 2xl:text-xl">
             {navLinks.map((link, index) => (
               <li key={index} className="">
                 <Link href={link.link}>
-                  <a className="hover:text-purple-500">
-                    {link.name.toUpperCase()}
-                  </a>
+                  <a className="">{link.name.toUpperCase()}</a>
                 </Link>
               </li>
             ))}
           </ul>
-          <p className="order-last text-xs lg:text-base text-brand-yellow mb-6 w-64 lg:w-[400px]">
+          <p className="order-last mb-6 w-64 text-xs text-brand-yellow lg:w-[400px] lg:text-base">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod in ab
             velit voluptatum saepe, minima ut optio? Quibusdam, quo dolore!
           </p>
-          <div className="order-first mb-12 md:mb-0 w-40 lg:w-[332px]">
+          <div className="order-first mb-12 w-40 md:mb-0 lg:w-[290px]">
             <Link href="/" className="">
               <Image
                 width={165}
@@ -72,9 +70,9 @@ export default function Footer() {
         </div>
         <div>
           <div className="mb-2">
-            <ul className="flex flex-row justify-center items-center space-x-2 lg:space-x-5">
+            <ul className="flex flex-row items-center justify-center space-x-2 lg:space-x-5">
               {iconLinks.map((iconLink, index) => (
-                <li key={index} className="w-5 lg:w-10">
+                <li key={index} className="w-5 lg:w-8">
                   <a href={iconLink.link}>
                     <Image
                       width={21}
@@ -88,7 +86,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          <p className="text-center text-white text-xs lg:text-base">
+          <p className="text-center text-xs text-white lg:text-base">
             Muntaha Foundation. All Rights Reserved
           </p>
         </div>
