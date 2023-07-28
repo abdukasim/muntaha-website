@@ -3,12 +3,14 @@ import React from "react";
 import { FaBars } from "react-icons/fa";
 import Logo from "./Navbar/logo";
 import LogoSmall from "./Navbar/logo-small";
+import { useRouter } from "next/router"
 
 export default function Navbar({ transparent }) {
   const drawnNav = React.useRef(null)
   const navbar = React.useRef(null)
   const [isOpen, setIsOpen] = React.useState(false);
   const [smallScreen, setSmallScreen] = React.useState(true)
+  const router = useRouter()
 
   const navLinks = [
     {
@@ -17,7 +19,7 @@ export default function Navbar({ transparent }) {
     },
     {
       name: "Works",
-      link: "/activity",
+      link: "/works",
     },
     {
       name: "Blog",
@@ -25,7 +27,7 @@ export default function Navbar({ transparent }) {
     },
     {
       name: "Commuity",
-      link: "/get-involved",
+      link: "/community",
     },
     {
       name: "Contact",
@@ -64,19 +66,24 @@ export default function Navbar({ transparent }) {
       {/* SMALL SCREEN NAV */}
       <div className="fixed top-0 left-0 w-full h-full flex md:hidden flex-col items-center text-sm bg-black/75 transition-all" ref={drawnNav}>
         <div className="flex flex-col items-center py-8 w-full bg-gray-300">
-          <div className="flex items-center">
-            <FaBars onClick={toggleNav} className="text-brand-blue text-2xl mr-4" />
-            <Link href="/">
-              <button>
-                {smallScreen
-                  ? <LogoSmall color={transparent ? "#0B77C2" : "#0B77C2"} textColor={transparent ? "#0B77C2" : "#0B77C2"} />
-                  : <Logo color={transparent ? "#0B77C2" : "#0B77C2"} textColor={transparent ? "#0B77C2" : "#0B77C2"} />}
-              </button>
-            </Link>
+          <div className="flex items-center justify-between w-full">
+            <div className="flex items-center ml-8">
+              <FaBars onClick={toggleNav} className="text-brand-blue text-3xl mr-4" />
+              <Link href="/">
+                <button>
+                  {smallScreen
+                    ? <LogoSmall color={transparent ? "#0B77C2" : "#0B77C2"} textColor={transparent ? "#0B77C2" : "#0B77C2"} />
+                    : <Logo color={transparent ? "#0B77C2" : "#0B77C2"} textColor={transparent ? "#0B77C2" : "#0B77C2"} />}
+                </button>
+              </Link>
+            </div>
+            <button className="text-white bg-brand-blue rounded-full text-xs p-2 px-6 mr-8">Donate Now</button>
           </div>
           <div className="flex flex-col my-2 mt-8">
             {navLinks.map((link, index) => <Link href={link.link} key={index}>
-              <button className="text-brand-blue m-2 my-4">{link.name}</button>
+              <button className="text-brand-blue m-2 my-4" style={{
+                fontWeight: router.pathname === link.link ? "bold" : "normal"
+              }}>{link.name}</button>
             </Link>)}
           </div>
         </div>
@@ -108,8 +115,13 @@ export default function Navbar({ transparent }) {
         <div className="hidden md:flex items-center mx-4">
           {navLinks.map((link, index) => <Link href={link.link} key={index}>
             {transparent
-              ? <button className="text-white text-base font-light mx-6">{link.name}</button>
-              : <button className="text-brand-blue text-base font-light mx-6">{link.name}</button>}
+              ? <button className="text-white text-base font-light mx-6" style={{
+                color: router.pathname === link.link ? '#fff38d' : 'white',
+                fontWeight: router.pathname === link.link ? "bold" : "normal"
+              }}>{link.name}</button>
+              : <button className="text-brand-blue text-base font-light mx-6" style={{
+                fontWeight: router.pathname === link.link ? "bold" : "normal"
+              }}>{link.name}</button>}
           </Link>)}
         </div>
 
