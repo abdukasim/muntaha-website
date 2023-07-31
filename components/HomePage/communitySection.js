@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CommunitySection() {
   return (
-    <section className="mx-8 mb-16 flex flex-col items-center justify-center  gap-12 md:flex-row lg:mx-28 lg:mb-34 lg:gap-32">
+    <section className="mx-8 mb-16 flex flex-col justify-center  gap-12 md:flex-row lg:mx-28 lg:mb-34 lg:gap-32">
       <div className="md:basis-2/5">
         <h3 className="mb-4 text-5xl font-bold text-brand-blue md:mb-8 lg:text-6xl">
           Join our Community
