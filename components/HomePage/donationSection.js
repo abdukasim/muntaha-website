@@ -29,83 +29,69 @@ export default function DonationSection() {
 
   return (
     <section
-      className="donation-section donation-pattern-sm md:donation-pattern-lg bg-no-repeat bg-cover"
+      className="mb-12 flex flex-col items-center justify-center md:flex-row md:justify-between md:bg-brand-yellow md:px-8 md:pt-[72px] md:pb-14 lg:px-28"
       id="donate"
     >
-      <div className="flex flex-col xl:flex-row xl:justify-between">
-        <div className="px-10 pt-16 pb-10 md:py-28 md:pl-20 xl:pl-44  md:bg-inherit flex items-start flex-col w-full md:w-max">
-          <h2 className="font-black text-3xl text-white mb-2">Get Involved.</h2>
-          <h2 className="font-black text-3xl text-white mb-6">Donate Now.</h2>
-          <p className="mb-6 pb-3 font-light text-base text-white md:text-2xl md:about-p-sm">
-            Blandit vel tortor facilisis quam turpis condimentum aliquam. Donec
-            molestie suspendisse erat et. Morbi habitant a massa arcu, varius
-            facilisis egestas. Facilisis sollicitudin neque amet placerat et
-            congue suspendisse. Eget sed arcu ac amet auctor at maecenas.
-            Egestas ut purus, dui quis ut. Sed et aenean amet malesuada
-          </p>
+      <div className="mb-8 flex flex-col items-center md:items-start">
+        <h3 className="text-5xl font-bold text-brand-blue md:text-7xl">
+          Get Involved
+        </h3>
+        <h3 className="text-5xl font-bold text-brand-blue md:text-7xl">
+          Donate Now!
+        </h3>
+        <span className="mx-14 mt-4 text-center text-xs font-light  text-brand-blue md:mx-0 md:text-left md:text-xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+          maiores.
+        </span>
+      </div>
+      <div className="mx-14 rounded-3xl bg-white px-4 pt-5 shadow-xl md:mx-0">
+        <div className="mb-3 flex justify-center gap-1">
+          <button
+            className={`w-[132px] rounded-full py-2 text-center text-sm shadow-md xl:w-[200px] xl:text-xl ${
+              donationInterval === "once"
+                ? "bg-brand-blue text-white"
+                : "bg-white text-brand-blue"
+            }`}
+            onClick={() => setDonationInterval("once")}
+          >
+            Give Once
+          </button>
+          <button
+            className={`w-[132px] rounded-full py-2 text-center text-sm shadow-md xl:w-[200px] xl:text-xl ${
+              donationInterval === "monthly"
+                ? "bg-brand-blue text-white"
+                : "bg-white text-brand-blue"
+            }`}
+            onClick={() => setDonationInterval("monthly")}
+          >
+            Monthly
+          </button>
         </div>
-        <div className="xl:mt-20 md:mx-14">
-          <div className="flex flex-row items-center justify-center mb-6 mx-10 ">
-            <button
-              className={`py-3 w-full ${
-                donationInterval === "once"
-                  ? "bg-purple-500 text-white"
-                  : "bg-white"
-              }  uppercase rounded-tl-md rounded-bl-md`}
-              onClick={() => setDonationInterval("once")}
-            >
-              give once
-            </button>
-            <button
-              className={`py-3 w-full ${
-                donationInterval === "monthly"
-                  ? "bg-purple-500 text-white"
-                  : "bg-white"
-              } uppercase rounded-br-md rounded-tr-md`}
-              onClick={() => setDonationInterval("monthly")}
-            >
-              monthly
-            </button>
-          </div>
-          <div className="flex flex-col mx-10 mb-16">
-            <div className="bg-gray-200 rounded-tr-md rounded-tl-md py-5 md:px-18">
-              <p className="font-medium text-base sm:text-xl md:text-2xl text-center">
-                Choose an amount to give per month
-              </p>
-            </div>
-            <div className="bg-white rounded-br-md rounded-bl-md grid grid-cols-3 gap-4 p-5 md:p-8">
-              {donationAmounts.map((amount) => (
-                <button
-                  className="py-4 md:py-7 sm:px-7 md:px-8 bg-gray-200 hover:bg-gray-400 focus:bg-gray-400 rounded-md"
-                  key={amount.value}
-                  onClick={() => {
-                    setAmount(amount.value);
-                    setMessage("");
-                  }}
-                >
-                  <p className="text-center text-xs sm:text-base">
-                    {amount.name}
-                  </p>
-                </button>
-              ))}
-              <input
-                className="py-4 md:py-7 sm:px-7 md:px-8 bg-gray-200 rounded-md col-span-2 placeholder:text-center placeholder:text-xs placeholder:sm:text-base placeholder:text-black"
-                placeholder="Other Amount"
-                type="text"
-                name="message"
-                onChange={handleChange}
-              />
-              <small className="w-max text-red-500">{message && message}</small>
+        <span className="mb-3 pl-3 text-xs text-brand-blue  xl:text-lg">
+          Choose an amount to give per month
+        </span>
+        <div className="mb-5 rounded-3xl pt-5 shadow-xl">
+          <div className="mx-3 mb-4 grid grid-cols-2 items-center gap-x-[7px] gap-y-[10px]">
+            {donationAmounts.map((donationAmount) => (
               <button
-                className="col-span-3 py-4 px-14 md:px-18 bg-purple-500 text-white uppercase rounded-md"
-                onClick={() => {
-                  amount ? startPayment() : setMessage("Please select amount");
-                }}
+                className={`h-[38px] rounded-full  text-center  text-xs shadow-md xl:h-16  xl:text-xl ${
+                  amount === donationAmount.value
+                    ? "bg-brand-blue text-white"
+                    : "bg-brand-yellow text-brand-blue"
+                }`}
+                key={donationAmount.value}
+                onClick={() => setAmount(donationAmount.value)}
               >
-                donate
+                {donationAmount.name}
               </button>
-            </div>
+            ))}
+            <button className="h-[38px] rounded-full bg-brand-yellow text-xs text-brand-blue shadow-md xl:h-16 xl:text-xl">
+              Other Amount
+            </button>
           </div>
+          <button className="-mb-1 w-full rounded-full bg-brand-blue  py-4 text-xl text-white">
+            Donate
+          </button>
         </div>
       </div>
     </section>
