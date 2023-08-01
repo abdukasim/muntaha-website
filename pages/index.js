@@ -22,14 +22,12 @@ export default function Home() {
       </Head>
 
       <header
-        className="md:flex md:flex-col hero-pattern  bg-center lg:bg-no-repeat bg-cover"
+        className="hero-pattern bg-cover bg-center  md:flex md:flex-col lg:bg-no-repeat"
         style={{ height: "90vh" }}
       >
         <Navbar transparent />
         <Header />
       </header>
-      <AboutSection />
-      <ActivitySection />
       <StatSection />
       <DonationSection />
       <NewsSection />
