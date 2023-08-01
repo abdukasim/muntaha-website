@@ -17,9 +17,9 @@
   }
   .hero-pattern {
     background-image: linear-gradient(
-        110.93deg,
+        0deg,
         rgba(0, 0, 0, 0.59) 19.43%,
-        rgba(74, 1, 125, 0.59) 83.61%
+        rgb(11, 119, 194, 0.5) 95.61%
       ),
       url(../public/images/heroImage.png);
   }
