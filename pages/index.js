@@ -22,7 +22,7 @@ export default function Home() {
       </Head>
 
       <header
-        className="hero-pattern bg-cover bg-center  md:flex md:flex-col lg:bg-no-repeat"
+        className=""
         style={{ height: "90vh" }}
       >
         <Navbar transparent />
