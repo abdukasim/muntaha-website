@@ -91,4 +91,25 @@
     background-image: url(../public/images/contactWatermark.svg);
     background-position: center;
   }
+  .hero {
+    background-blend-mode: multiply;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #hero-1 {
+    background-image: url(../public/images/hero/one.png), linear-gradient(0deg, #0B77C2cc, transparent, #0B77C277, #0B77C2);
+  }
+  #hero-2 {
+    background-image: url(../public/images/hero/two.png), linear-gradient(0deg, #0B77C2cc, transparent, transparent, #0B77C2cc);
+  }
+  #hero-3 {
+    background-image: url(../public/images/hero/three.png), linear-gradient(0deg, #0B77C299, #0B77C211, #0B77C299);
+  }
+  /* #hero-4 {
+    background-image: url(../public/images/hero/four.png);
+  }
+  #hero-5 {
+    background-image: url(../public/images/hero/five.png);
+  } */
 }

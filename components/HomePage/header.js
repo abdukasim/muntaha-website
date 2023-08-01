@@ -1,31 +1,116 @@
+/* eslint-disable react/jsx-key */
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { fadeInVariant } from "../../libs/animations";
+import { Carousel } from "react-responsive-carousel";
+import styles from "react-responsive-carousel/lib/styles/carousel.min.css"
+import Hero from "../Hero/Hero";
+import { FaCaretLeft, FaCaretRight, FaCircle, FaDotCircle } from "react-icons/fa"
+
+const ChildOne = () => {
+  return (
+    <div className="flex flex-col justify-start px-3 lg:px-10">
+      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">{"Let's Make"}</h1>
+      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">Ethiopia Hunger</h1>
+      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">Free</h1>
+      <p className="hidden md:block text-left my-3 md:my-6 md:w-[435px] text-xs md:text-sm lg:text-base">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      <p className="block md:hidden text-left my-3 md:my-6 w-[225px] text-xs md:text-base">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+      <button className="self-start text-brand-blue bg-brand-yellow rounded-full text-xs p-2 px-6 md:text-sm lg:text-xl md:p-2 md:px-4 lg:p-4 lg:px-10">Donate Now</button>
+    </div>
+  )
+}
+
+const ChildTwo = () => {
+  return (
+    <div className="flex flex-col justify-start px-3 lg:px-10">
+      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">We Are</h1>
+      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">Here To Make</h1>
+      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">Ethiopia Better</h1>
+      <p className="hidden md:block text-left my-3 md:my-6 md:w-[435px] text-xs md:text-sm lg:text-base">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+      <p className="block md:hidden text-left my-3 md:my-6 w-[225px] text-xs md:text-base">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+      <button disabled className="opacity-0 self-start text-brand-blue bg-brand-yellow rounded-full text-xs p-2 px-6 md:text-sm lg:text-xl md:p-2 md:px-4 lg:p-4 lg:px-10">Donate Now</button>
+    </div>
+  )
+}
 
 export default function Header() {
+  const items = [
+    <ChildOne />,
+    <ChildTwo />,
+    <ChildTwo />,
+  ]
+
+  const [indicatorSpace, setIndicatorSpace] = React.useState(5)
+  const [indicatorStart, setIndicatorStart] = React.useState(5)
+
+  const run = () => {
+    if (window.innerWidth <= 425) {
+      setIndicatorSpace(5)
+      setIndicatorStart(45)
+    } else if (window.innerWidth <= 768) {
+      setIndicatorSpace(3.5)
+      setIndicatorStart(47)
+    } else {
+      setIndicatorSpace(2.25)
+      setIndicatorStart(50)
+    }
+  }
+
+  React.useEffect(() => {
+    run()
+
+    window.onresize = run
+  }, [])
+
   return (
-    <motion.div
-      variants={fadeInVariant}
-      initial="hidden"
-      animate="visible"
-      className="flex flex-col mx-4 items-center justify-center h-full"
+    <Carousel
+      className="bg-blue-200/40 m-0"
+      showStatus={false} autoPlay={false} infiniteLoop={true} swipeable={true} emulateTouch={true}
+      renderArrowNext={(clickHandler, hasNext) => {
+        return (
+          <div
+            className={`${hasNext ? "absolute" : "hidden"
+              } top-0 bottom-0 right-0 flex justify-center items-center md:p-1 lg:p-3 z-20`}
+            onClick={clickHandler}
+          >
+            <div className="flex items-center justify-center p-1 mr-4 bg-white/50 opacity-30 hover:opacity-100 rounded-full cursor-pointer transition-all">
+              <FaCaretRight className="text-white text-xl md:text-3xl lg:text-5xl self-center relative left-[2px]" onClick={clickHandler} />
+            </div>
+          </div>
+        )
+      }}
+
+      renderArrowPrev={(clickHandler, hasPrev) => {
+        return (
+          <div
+            className={`${hasPrev ? "absolute" : "hidden"
+              } top-0 bottom-0 left-0 flex justify-center items-center md:p-1 lg:p-3 z-20`}
+            onClick={clickHandler}
+          >
+            <div className="flex items-center justify-center p-1 ml-4 bg-white/50 opacity-30 hover:opacity-100 rounded-full cursor-pointer transition-all">
+              <FaCaretLeft className="text-white text-xl md:text-3xl lg:text-5xl self-center relative right-[2px]" onClick={clickHandler} />
+            </div>
+          </div>
+        )
+      }}
+
+      renderIndicator={(clickHandler, isSelected, index) => {
+        return (
+          <div className={"absolute bottom-4 transition-all"} style={{
+            left: indicatorStart + (index * indicatorSpace) + "%"
+          }} onClick={clickHandler}>
+            <FaCircle className={`text-[10px] md:text-sm lg:text-base text-white cursor-pointer hover:opacity-70 ${isSelected ? "opactiy-100" : "opacity-40"}`} />
+          </div>
+        )
+      }}
     >
-      <h1 className="text-white text-center font-black text-3xl sm:text-5xl md:text-8xl tracking-wider mb-3">
-        HUNGER FREE ETHIOPIA
-      </h1>
-      <p className="font-light text-sm sm:text-xl text-white text-center mb-16 hero-p-small md:hero-p-lg sm:eading-10">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis diam
-        fringilla sed purus massa aliquam. Tincidunt vitae, nunc turpis pretium
-        tincidunt.
-      </p>
-      <a
-        href="#donate"
-        className="text-white font-bold text-xl md:text-3xl bg-transparent border border-solid border-white rounded-md drop-shadow-lg py-2 sm:py-4 md:py-6 px-10 sm:px-12 md:px-14 hover:bg-white hover:text-purple-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 "
-      >
-        DONATE NOW
-      </a>
-    </motion.div>
+      {items.map((item, index) => (
+        <Hero key={index} index={index + 1}>
+          {item}
+        </Hero>
+      ))}
+    </Carousel>
   );
 }

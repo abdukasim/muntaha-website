@@ -7,6 +7,7 @@ import Vision from "../components/AboutPage/vision";
 import CommunitySection from "../components/HomePage/communitySection";
 import Navbar from "../components/Navbar";
 import NewsSection from "../components/newsSection";
+import Header from "../components/HomePage/header";
 
 export default function About() {
   return (
@@ -17,7 +18,7 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar transparent />
-      <Hero />
+      <Header />
       <AboutUs />
       <Vision />
       <Hero />
