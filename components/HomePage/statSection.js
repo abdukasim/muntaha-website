@@ -50,7 +50,7 @@ export default function StatSection() {
     },
   ];
   return (
-    <section className="relative mb-20 bg-gray-800 md:mb-0">
+    <section className="relative mb-20 md:mb-0">
       {/* Background image */}
       <Image
         src="/images/heroImage.png"
@@ -61,7 +61,7 @@ export default function StatSection() {
       />
 
       {/* Blue overlay */}
-      <div className="absolute inset-0 bg-brand-blue mix-blend-multiply" />
+      <div className="absolute inset-0 bg-brand-blue opacity-90" />
 
       <div className="relative mx-auto max-w-7xl py-12 px-4 sm:py-16 md:px-12 lg:px-28">
         {/* Stats Card */}
