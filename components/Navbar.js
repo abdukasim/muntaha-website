@@ -8,7 +8,7 @@ import { useRouter } from "next/router"
 export default function Navbar({ transparent }) {
   const drawnNav = React.useRef(null)
   const navbar = React.useRef(null)
-  const [isOpen, setIsOpen] = React.useState(false);
+  const overlay = React.useRef(null)
   const [smallScreen, setSmallScreen] = React.useState(true)
   const router = useRouter()
 
@@ -37,16 +37,19 @@ export default function Navbar({ transparent }) {
 
   const toggleNav = () => {
     drawnNav.current.style.top = drawnNav.current.style.top === "0%" ? "-100%" : "0%"
+    overlay.current.style.display = overlay.current.style.display === "none" ? "flex" : "none"
   }
 
   const handleScreenSize = () => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
       setSmallScreen(true)
     } else {
       setSmallScreen(false)
     }
 
     drawnNav.current.style.top = "-100%"
+    overlay.current.style.display = "none"
+    navbar.current.style.width = window.innerWidth + "px"
     navbar.current.style.position = transparent ? "absolute" : "relative"
     navbar.current.style.backgroundColor = transparent ? "transparent" : "white"
   }
@@ -58,13 +61,15 @@ export default function Navbar({ transparent }) {
   }, [])
 
   return (
-    <nav className="w-full top-0 left-0 z-10
+    <nav className="w-full top-0 left-0 z-10 m-0
       flex items-center justify-between p-8
-      md:p-10 md:px-20
+      md:p-6 md:px-12
+      lg:p-10 lg:px-16
     " ref={navbar}>
 
       {/* SMALL SCREEN NAV */}
-      <div className="fixed top-0 left-0 w-full h-full flex md:hidden flex-col items-center text-sm bg-black/75 transition-all" ref={drawnNav}>
+      <div className="absolute hidden bg-black/60 top-0 left-0 z-20 w-screen h-screen transition-all" ref={overlay} onClick={toggleNav}></div>
+      <div className="fixed top-[-100%] left-0 w-full flex md:hidden flex-col items-center text-sm z-30 transition-all" ref={drawnNav}>
         <div className="flex flex-col items-center py-8 w-full bg-gray-300">
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center ml-8">
@@ -115,17 +120,25 @@ export default function Navbar({ transparent }) {
         <div className="hidden md:flex items-center mx-4">
           {navLinks.map((link, index) => <Link href={link.link} key={index}>
             {transparent
-              ? <button className="text-white text-base font-light mx-6" style={{
-                color: router.pathname === link.link ? '#fff38d' : 'white',
-                fontWeight: router.pathname === link.link ? "bold" : "normal"
-              }}>{link.name}</button>
-              : <button className="text-brand-blue text-base font-light mx-6" style={{
-                fontWeight: router.pathname === link.link ? "bold" : "normal"
-              }}>{link.name}</button>}
+              ? <button className="
+              text-white font-light
+                md:text-sm lg:text-base
+                mx-3 lg:mx-6
+              " style={{
+                  color: router.pathname === link.link ? '#fff38d' : 'white',
+                  fontWeight: router.pathname === link.link ? "bold" : "normal"
+                }}>{link.name}</button>
+              : <button className="
+              text-brand-blue font-light
+                md:text-sm lg:text-base
+                mx-3 lg:mx-6
+              " style={{
+                  fontWeight: router.pathname === link.link ? "bold" : "normal"
+                }}>{link.name}</button>}
           </Link>)}
         </div>
 
-        <button className="text-brand-blue bg-brand-yellow rounded-full text-xs p-2 px-6 md:text-base md:p-2 md:px-8">Donate Now</button>
+        <button className="text-brand-blue bg-brand-yellow rounded-full text-xs p-2 px-6 md:text-sm lg:text-base md:p-2 md:px-4 lg:px-6">Donate Now</button>
       </div>
       {/* RIGHT SIDE HEADER END */}
 
