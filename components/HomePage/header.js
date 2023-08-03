@@ -49,7 +49,6 @@ export default function Header() {
   ]
 
   const [indicatorSpace, setIndicatorSpace] = React.useState(5)
-  const [indicatorStart, setIndicatorStart] = React.useState(50 - (indicatorSpace * items.length / 2))
 
   const run = () => {
     if (window.innerWidth <= 425) {
@@ -59,7 +58,12 @@ export default function Header() {
     } else {
       setIndicatorSpace(2.25)
     }
-    setIndicatorStart(50 - (indicatorSpace * items.length / 2))
+  }
+
+  const getIndicatorStart = index => {
+    const i = (index) - ((items.length - 1) / 2)
+
+    return 50 + (i * indicatorSpace)
   }
 
   React.useEffect(() => {
@@ -103,7 +107,8 @@ export default function Header() {
       renderIndicator={(clickHandler, isSelected, index) => {
         return (
           <div className={"absolute bottom-20 transition-all"} style={{
-            left: indicatorStart + (index * indicatorSpace) + "%"
+            left: `${getIndicatorStart(index)}%`,
+            transform: `translateX(-${getIndicatorStart(index)}%)`
           }} onClick={clickHandler}>
             <FaCircle className={`text-[10px] md:text-sm lg:text-base text-white cursor-pointer hover:opacity-70 ${isSelected ? "opactiy-100" : "opacity-40"}`} />
           </div>
