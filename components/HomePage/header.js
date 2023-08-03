@@ -49,19 +49,17 @@ export default function Header() {
   ]
 
   const [indicatorSpace, setIndicatorSpace] = React.useState(5)
-  const [indicatorStart, setIndicatorStart] = React.useState(5)
+  const [indicatorStart, setIndicatorStart] = React.useState(50 - (indicatorSpace * items.length / 2))
 
   const run = () => {
     if (window.innerWidth <= 425) {
       setIndicatorSpace(5)
-      setIndicatorStart(45)
     } else if (window.innerWidth <= 768) {
       setIndicatorSpace(3.5)
-      setIndicatorStart(47)
     } else {
       setIndicatorSpace(2.25)
-      setIndicatorStart(50)
     }
+    setIndicatorStart(50 - (indicatorSpace * items.length / 2))
   }
 
   React.useEffect(() => {
