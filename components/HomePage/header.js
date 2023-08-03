@@ -1,23 +1,24 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import { fadeInVariant } from "../../libs/animations";
 import { Carousel } from "react-responsive-carousel";
-import styles from "react-responsive-carousel/lib/styles/carousel.min.css"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
 import Hero from "../Hero/Hero";
-import { FaCaretLeft, FaCaretRight, FaCircle, FaDotCircle } from "react-icons/fa"
+import { FaCaretLeft, FaCaretRight, FaCircle, } from "react-icons/fa"
 
 const ChildOne = () => {
   return (
     <div className="flex flex-col justify-start px-3 lg:px-10">
-      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">{"Let's Make"}</h1>
-      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">Ethiopia Hunger</h1>
-      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">Free</h1>
-      <p className="hidden md:block text-left my-3 md:my-6 md:w-[435px] text-xs md:text-sm lg:text-base">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-      <p className="block md:hidden text-left my-3 md:my-6 w-[225px] text-xs md:text-base">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-      <button className="self-start text-brand-blue bg-brand-yellow rounded-full text-xs p-2 px-6 md:text-sm lg:text-xl md:p-2 md:px-4 lg:p-4 lg:px-10">Donate Now</button>
+      <h1 className="text-left text-3xl md:text-5xl lg:text-6xl font-bold leading-none">{"Let's Make"}</h1>
+      <h1 className="text-left text-3xl md:text-5xl lg:text-6xl font-bold leading-none">Ethiopia Hunger</h1>
+      <h1 className="text-left text-3xl md:text-5xl lg:text-6xl font-bold leading-none">Free</h1>
+      <p className="hidden md:block text-left my-3 md:my-6 md:w-[435px] text-xs md:text-sm lg:text-base text-white/80">
+        We are dedicated to our mission of making Ethiopia Hunger Free by providing food and support to those in need.
+        Our goal is to provide them with the support and resources they need to live healthier and happier lives.
+      </p>
+      <p className="block md:hidden text-left my-3 md:my-6 w-[225px] text-xs md:text-base text-white/80">
+        We are dedicated to our mission of making Ethiopia Hunger Free by providing food and support to those in need.
+      </p>
+      <button className="self-start text-brand-blue bg-brand-yellow rounded-full text-xs p-2 px-6 md:text-sm lg:text-xl md:p-2 md:px-4 lg:p-3.5 lg:px-10">Donate Now</button>
     </div>
   )
 }
@@ -25,11 +26,16 @@ const ChildOne = () => {
 const ChildTwo = () => {
   return (
     <div className="flex flex-col justify-start px-3 lg:px-10">
-      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">We Are</h1>
-      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">Here To Make</h1>
-      <h1 className="text-left text-3xl md:text-6xl lg:text-7xl font-bold leading-none">Ethiopia Better</h1>
-      <p className="hidden md:block text-left my-3 md:my-6 md:w-[435px] text-xs md:text-sm lg:text-base">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-      <p className="block md:hidden text-left my-3 md:my-6 w-[225px] text-xs md:text-base">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+      <h1 className="text-left text-3xl md:text-5xl lg:text-6xl font-bold leading-none">We Are</h1>
+      <h1 className="text-left text-3xl md:text-5xl lg:text-6xl font-bold leading-none">Here To Make</h1>
+      <h1 className="text-left text-3xl md:text-5xl lg:text-6xl font-bold leading-none">Ethiopia Better</h1>
+      <p className="hidden md:block text-left my-3 md:my-6 md:w-[435px] text-xs md:text-sm lg:text-base text-white/80">
+        We are dedicated to our mission of making Ethiopia Hunger Free by providing food and support to those in need.
+        Our goal is to provide them with the support and resources they need to live healthier and happier lives.
+      </p>
+      <p className="block md:hidden text-left my-3 md:my-6 w-[225px] text-xs md:text-base text-white/80">
+        We are dedicated to our mission of making Ethiopia Hunger Free by providing food and support to those in need.
+      </p>
       <button disabled className="opacity-0 self-start text-brand-blue bg-brand-yellow rounded-full text-xs p-2 px-6 md:text-sm lg:text-xl md:p-2 md:px-4 lg:p-4 lg:px-10">Donate Now</button>
     </div>
   )
@@ -98,7 +104,7 @@ export default function Header() {
 
       renderIndicator={(clickHandler, isSelected, index) => {
         return (
-          <div className={"absolute bottom-4 transition-all"} style={{
+          <div className={"absolute bottom-20 transition-all"} style={{
             left: indicatorStart + (index * indicatorSpace) + "%"
           }} onClick={clickHandler}>
             <FaCircle className={`text-[10px] md:text-sm lg:text-base text-white cursor-pointer hover:opacity-70 ${isSelected ? "opactiy-100" : "opacity-40"}`} />

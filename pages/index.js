@@ -23,7 +23,7 @@ export default function Home() {
 
       <header
         className=""
-        style={{ height: "90vh" }}
+        style={{ height: "93vh" }}
       >
         <Navbar transparent />
         <Header />
