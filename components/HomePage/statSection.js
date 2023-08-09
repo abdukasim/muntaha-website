@@ -98,7 +98,7 @@ export default function StatSection() {
         <div className="-ml-4 mt-20 -mb-12 w-screen bg-brand-yellow py-12 px-8 md:ml-0 md:mt-12 md:mb-0 md:block md:w-full md:bg-inherit  md:px-0  md:py-0">
           <div className="mb-20 flex flex-col items-center gap-5 md:flex-row md:gap-20">
             <div className="h-14 w-14 md:h-32 md:min-w-[128px] lg:h-52 lg:min-w-[208px]">
-              <FingerprintIcon />
+              <FingerprintIcon alternate={true} />
             </div>
             <div className="flex flex-col justify-center md:block">
               <h3 className="mb-4 text-center text-3xl font-bold text-brand-blue md:text-left md:text-white">

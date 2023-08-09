@@ -6,7 +6,11 @@ const FingerprintIcon = (props) => (
     height="100%"
     viewBox="0 0 55.4 76.415"
     {...props}
-    className="fill-brand-blue md:fill-brand-yellow"
+    className={`${
+      props.alternate
+        ? "fill-brand-blue md:fill-brand-yellow"
+        : "fill-brand-blue"
+    }`}
   >
     <defs>
       <clipPath id="a">
