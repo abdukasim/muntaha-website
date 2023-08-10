@@ -115,7 +115,7 @@ export default function StatSection() {
                 needs of orphans,, highly vulnerable children and young
                 adolescents , access to education, health Care.
               </p>
-              <button className="full mx-12 rounded-full bg-brand-blue px-16 py-4 text-lg text-brand-yellow md:mx-0 md:bg-brand-yellow md:text-brand-blue">
+              <button className="mx-14 rounded-full bg-brand-blue px-10 py-2 text-lg text-brand-yellow md:mx-0 md:bg-brand-yellow md:text-brand-blue">
                 Learn More
               </button>
             </div>
@@ -139,7 +139,7 @@ export default function StatSection() {
                 together, they define how, why and where we aim to lead and
                 partner.
               </p>
-              <button className="full mx-12 rounded-full bg-brand-blue px-16 py-4 text-lg text-brand-yellow md:mx-0 md:bg-brand-yellow md:text-brand-blue">
+              <button className="mx-14 rounded-full bg-brand-blue px-10 py-2 text-lg text-brand-yellow md:mx-0 md:bg-brand-yellow md:text-brand-blue">
                 Learn More
               </button>
             </div>
