@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import AboutUs from "../components/AboutPage/aboutUs";
-import Leadership from "../components/AboutPage/leadership";
+import HumanResource from "../components/AboutPage/humanResource";
 import Vision from "../components/AboutPage/vision";
 import CommunitySection from "../components/HomePage/communitySection";
 import Navbar from "../components/Navbar";
@@ -20,7 +20,7 @@ export default function About() {
       <Header />
       <AboutUs />
       <Vision />
-      <Leadership />
+      <HumanResource />
       <NewsSection />
       <CommunitySection />
     </>
