@@ -49,7 +49,7 @@ export default function Navbar({ transparent }) {
 
     drawnNav.current.style.top = "-100%"
     overlay.current.style.display = "none"
-    navbar.current.style.width = window.innerWidth + "px"
+    navbar.current.style.width = "100%" //window.innerWidth + "px"
     navbar.current.style.position = transparent ? "absolute" : "relative"
     navbar.current.style.backgroundColor = transparent ? "transparent" : "white"
   }
