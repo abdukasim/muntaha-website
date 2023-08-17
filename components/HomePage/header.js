@@ -75,7 +75,7 @@ export default function Header() {
   return (
     <Carousel
       className="bg-blue-200/40 m-0"
-      showStatus={false} autoPlay={false} infiniteLoop={true} swipeable={true} emulateTouch={true}
+      showStatus={false} autoPlay={false} infiniteLoop={true} swipeable={false} showThumbs={false}
       renderArrowNext={(clickHandler, hasNext) => {
         return (
           <div
