@@ -112,4 +112,9 @@
   #hero-5 {
     background-image: url(../public/images/hero/five.png);
   } */
+  .what-we-do {
+    background-image: url(../public/images/hero/three.png);
+    background-position: bottom;
+    background-size: cover;
+  }
 }
