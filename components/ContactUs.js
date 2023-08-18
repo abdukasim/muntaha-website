@@ -14,7 +14,7 @@ export default function ContactUs() {
 			</div>
 
 
-			<div className="right grid grid-cols-1 gap-y-4 mb-8 md:max-w-[700px]">
+			<div className="right grid grid-cols-1 gap-y-4 md:gap-y-6 mb-8 md:max-w-[700px]">
 
 				<div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-4 gap-y-4">
 					<input type="text" placeholder="First Name" />

@@ -120,7 +120,7 @@
 }
 
 .contact-us input, .contact-us textarea {
-  @apply text-black rounded-full p-5 px-8 shadow-lg font-thin placeholder:opacity-60 focus:outline-brand-blue
+  @apply rounded-full p-5 px-8 md:px-12 shadow-lg placeholder:opacity-60 focus:outline-brand-blue placeholder:font-thin
 }
 .contact-us textarea {
   @apply h-48 rounded-3xl;
