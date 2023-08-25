@@ -18,13 +18,13 @@ export default function NewsSection() {
   ];
   return (
     <section className="ml-8 mb-9 lg:ml-28">
-      <h3 className="mb-9 text-2xl font-normal text-brand-blue lg:mb-16 lg:text-5xl">
+      <h3 className="mb-9 text-2xl font-medium text-brand-blue lg:mb-16 lg:text-3xl">
         News and Stories
       </h3>
       <div className="no-scrollbar flex h-[280px] gap-7 overflow-x-scroll lg:h-[450px]">
         {news.map((item, index) => (
-          <div key={index} className="w-60 lg:w-[400px]">
-            <div className="w-60 lg:w-[400px]">
+          <div key={index} className="w-60 lg:w-[350px]">
+            <div className="w-60 lg:w-[350px]">
               <Image
                 width={243}
                 height={128}
