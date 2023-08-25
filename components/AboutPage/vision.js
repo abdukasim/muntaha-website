@@ -17,7 +17,7 @@ export default function Vision() {
       <div className="absolute inset-0 bg-brand-blue opacity-90" />
 
       {/* card with height more than parent container */}
-      <div className="relative mx-auto max-w-7xl px-12 py-12">
+      <div className="relative mx-auto max-w-7xl px-12 py-12 md:hidden">
         <div className="relative z-10 -my-80  rounded-3xl bg-white px-11 pt-14 pb-28 shadow-xl">
           <div className="mb-9 flex flex-col items-center gap-4">
             <Image
@@ -39,7 +39,7 @@ export default function Vision() {
               src="/images/mission.svg"
               width={56}
               height={56}
-              alt="vision"
+              alt="mission"
             />
             <h2 className="text-2xl font-bold text-brand-blue">Our Mission</h2>
             <p className="text-center text-xs font-light text-brand-blue">
@@ -90,6 +90,53 @@ export default function Vision() {
               contribute towards a hunger free Ethiopia as the Muntaha
               Foundation work is powered by our mission, vision and values.
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* two cards displayed on md screens and above */}
+      <div className="hidden md:block">
+        <div className="relative z-10 mx-auto px-5 lg:px-28">
+          <div className="grid grid-cols-2 justify-center gap-12 lg:gap-20">
+            <div className="-mt-10 -mb-5 flex w-full flex-col items-start gap-4 rounded-[48px] bg-white  px-10 pt-12 pb-8 drop-shadow-2xl  xl:pl-12 xl:pr-28 xl:pt-24 xl:pb-16">
+              <div className="w-14 md:w-28">
+                <Image
+                  src="/images/vision.svg"
+                  layout="responsive"
+                  width={56}
+                  height={56}
+                  alt="vision"
+                />
+              </div>
+              <h2 className="text-2xl font-bold text-brand-blue md:text-3xl lg:text-4xl">
+                Our Vision
+              </h2>
+              <p className="text-justify text-xs font-light text-brand-blue md:text-base">
+                To be a leading reliable center - where children in need are
+                served for a healthy transition to adulthood & realize their
+                full potential...
+              </p>
+            </div>
+
+            <div className="-mt-10 -mb-5 flex w-full flex-col items-start gap-4 rounded-[48px] bg-white  px-10 pt-12 pb-8 drop-shadow-2xl  xl:pl-12 xl:pr-28 xl:pt-24 xl:pb-16">
+              <div className="w-14 md:w-28">
+                <Image
+                  src="/images/mission.svg"
+                  layout="responsive"
+                  width={56}
+                  height={56}
+                  alt="mission"
+                />
+              </div>
+              <h2 className="text-2xl font-bold text-brand-blue md:text-4xl">
+                Our Mission
+              </h2>
+              <p className="text-left text-xs font-light text-brand-blue md:text-base">
+                To be a leading reliable center - where children in need are
+                served for a healthy transition to adulthood & realize their
+                full potential...
+              </p>
+            </div>
           </div>
         </div>
       </div>
