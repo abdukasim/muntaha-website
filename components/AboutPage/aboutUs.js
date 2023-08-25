@@ -3,7 +3,7 @@ import FingerprintIcon from "../svgComponents/fingerprint";
 
 export default function AboutUs() {
   return (
-    <section className="flex h-[684px] flex-col items-center gap-9 bg-white px-14 md:flex-row md:items-start md:gap-0 md:px-12 md:pt-[151px] xl:px-36 2xl:px-[233px]">
+    <section className="flex h-[684px] flex-col items-center gap-9 bg-white px-14 pt-12 md:h-max md:flex-row md:items-start md:gap-0 md:px-12 md:pt-[151px] md:pb-[260px] xl:px-36 2xl:px-[233px]">
       <div className="w-14  md:mr-12 md:min-w-[150px] xl:mr-[150px] xl:min-w-[180px] 2xl:min-w-[220px]">
         <FingerprintIcon />
       </div>
