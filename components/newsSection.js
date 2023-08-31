@@ -21,7 +21,7 @@ export default function NewsSection() {
       <h3 className="mb-9 text-2xl font-medium text-brand-blue lg:mb-16 lg:text-3xl">
         News and Stories
       </h3>
-      <div className="no-scrollbar flex h-[280px] gap-7 overflow-x-scroll lg:h-[450px]">
+      <div className="no-scrollbar flex h-[280px] gap-7 overflow-x-scroll pr-8 lg:h-[450px]">
         {news.map((item, index) => (
           <div key={index} className="w-60 lg:w-[350px]">
             <div className="w-60 lg:w-[350px]">
@@ -34,7 +34,7 @@ export default function NewsSection() {
               />
             </div>
             <div className="flex h-32 min-w-full flex-col items-start justify-center pl-5 shadow-xl lg:h-44 lg:pl-8">
-              <h4 className="text-sm font-bold text-brand-blue lg:text-3xl">
+              <h4 className="text-sm font-bold text-brand-blue lg:text-2xl">
                 {item.title}
               </h4>
               <p className="mb-2 text-xs font-normal text-brand-blue lg:text-sm">

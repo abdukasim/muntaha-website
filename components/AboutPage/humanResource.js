@@ -83,11 +83,11 @@ export default function Leadership() {
         <h3 className="ml-8 text-center text-3xl font-medium text-brand-blue md:text-left lg:ml-28">
           Team
         </h3>
-        <div className="no-scrollbar  mt-6 flex h-[340px] w-screen gap-4 overflow-x-scroll pl-8 drop-shadow-lg lg:pl-28">
+        <div className="no-scrollbar mt-6 flex h-[340px] w-screen gap-4 overflow-x-scroll pr-8 pl-8 drop-shadow-lg lg:pl-28">
           {teamMembers.map((item, index) => (
             <div
               key={index}
-              className="flex h-[335px] w-[207px] flex-col items-center rounded-2xl bg-white pt-3 pb-5"
+              className="flex h-[335px] min-w-[207px] flex-col items-center rounded-2xl bg-white pt-3 pb-5"
             >
               <div className="mb-5 h-[237px] w-[180px] rounded-2xl">
                 <Image
